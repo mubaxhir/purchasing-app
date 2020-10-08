@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotation</title>
+</head>
+<body>
+  <div style="background-color: white;" class="center" id="quotationForm">
+    <div role="main" class="form-all" style="margin:0 auto;">
+        <ul class="form-section page-section" style="display: block;" >
+          <li  class="form-input-wide" data-type="control_head">
+            <div class="form-header-group  header-large">
+              <div class="header-text httal htvam">
+                <h2  class="form-header" data-component="header">
+                  Quotation
+                </h2>
+                <!-- <div class="form-subHeader">
+                  Simply Enter Quotation Info
+                </div> -->
+              </div>
+            </div>
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto">Product Name:  {{ product.product }}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" name="productName" class="form-textbox" style="width:610px; height:1rem" placeholder="(e.g ebike battery)" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6">Price:  {{product.price}}</label>
+            <!-- <div  class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number"  name="price" class="form-textbox" style="width:310px; height:1rem; text-align: right; font-weight: bolder; " size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                EUR
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6"> Quantity:  {{product.quantity}}</label>
+            <!-- <div  class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="quantity" class="form-textbox" style="width:310px; height:1rem " size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                pieces
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto"  for="input_6"> Lead Time:  {{product.lead_time}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="leadTime" class="form-textbox" style="width:310px; height:1rem " size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                days
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6"> Type:  {{product.product_type}}</label>
+            <!-- <div  class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" name="type" class="form-textbox" style="width:310px; height:1rem" size="310" value="" placeholder="Lithium battery" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_radio" >
+            <label class="form-label form-label-top form-label-auto" for="input_12"> Voltage:  {{product.voltage}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="full">
+              <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_12" data-component="radio">
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="voltage" value="24" required="">
+                  <label for="input_12_0"> 24V </label>
+                </span>
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="voltage" value="36" required="">
+                  <label for="input_12_1"> 36V </label>
+                </span>
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="voltage" value="48" required="">
+                  <label for="input_12_2"> 48V </label>
+                </span>
+              </div>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6"> Capacity:  {{product.capacity}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" name="capacity" class="form-textbox" style="width:310px; height:1rem" placeholder="(e.g 10-20)" size="310" value="" placeholder="e.g 12Ah" aria-labelledby="label_6 sublabel_input_6" required="">
+              Ah
+            </span>
+            </div> -->
+          </li>
+          
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6">Item:  {{product.item}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" name="item" class="form-textbox" style="width:310px; height:1rem" placeholder="(e.g ebike battery)" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6">Weight:  {{product.weight}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="weight" class="form-textbox" placeholder="(e.g 3.50)" style="width:310px; height:1rem " size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                kg
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_radio" >
+            <label class="form-label form-label-top form-label-auto" for="input_12"> Color:  {{product.color}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="full">
+              <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_12" data-component="radio">
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="color" value="black" required="">
+                  <label for="input_12_0"> Black </label>
+                </span>
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="color" value="silver" required="">
+                  <label for="input_12_1"> Silver </label>
+                </span>
+              </div>
+            </div> -->
+          </li>
+
+          <li class="form-line form-line-column form-col-1 jf-required" data-type="control_dropdown">
+            <label class="form-label form-label-top" > Usage:  {{product.usage}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <select class="form-dropdown validate[required]" name="usage" style="width:310px ; font-size:16px" data-component="dropdown" required="" aria-labelledby="label_17">
+                <option selected="" value="ebike" > Ebike </option>
+                <option value="escooter" > Escooter </option>
+              </select>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6"> Battery Type:  {{product.battery_type}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" name="bateryType" class="form-textbox" style="width:310px; height:1rem " placeholder="(e.g 18650 cell)" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div> -->
+          </li>
+        
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6"> Cycle Life:  {{product.cycle_life}}</label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="cycleLife" class="form-textbox" style="width:310px; height:1rem " placeholder="(e.g 500 - 800)" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="" min="500" max="800">
+                times
+              </span>
+            </div> -->
+          </li>
+          
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6">
+              Nominal Capacity:  {{product.nominal_capacity}}Ah
+            </label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="normalCapacity" class="form-textbox" style="width:310px; height:1rem " placeholder="(e.g 10.4)" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                Ah
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto"  for="input_6">
+              Nominal Voltage:  {{product.nominal_voltage}}V     
+            </label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="normalVoltage" class="form-textbox" style="width:310px; height:1rem " size="310" placeholder="(e.g 36)" aria-labelledby="label_6 sublabel_input_6" required="">
+                Volts
+              </span>
+            </div> -->
+          </li>
+          
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6">
+              Warrenty: {{product.warranty}}       
+            </label>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" name="warrenty" class="form-textbox" style="width:310px; height:1rem " placeholder="(e.g 2)" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                Years
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_email" >
+            <label class="form-label form-label-top form-label-auto" for="input_6">
+              Product Description:
+            </label>
+            <p>{{product.description}}</p>
+            <!-- <div class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                  <textarea name="description" id="description" cols="70" rows="10" form="quotationForm" placeholder="Enter text here"></textarea>
+              </span>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_radio" >
+            <label class="form-label form-label-top form-label-auto" for="input_12">
+              Customization: {{product.customization}}
+            </label>
+            <!-- <div class="form-input-wide jf-required" data-layout="full">
+              <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_12" data-component="radio">
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="customization" value="yes" required="">
+                  <label for="input_12_0"> Yes </label>
+                </span>
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" name="customization" value="no" required="">
+                  <label for="input_12_1"> No </label>
+                </span>
+              </div>
+            </div> -->
+          </li>
+
+          <li class="form-line jf-required" data-type="control_radio" >
+            <label for="Certificates">Certificates: {{product.certificates}}</label>
+            <!-- <span style="font-size: 10px;">press ctrl to select multiple</span>
+            <select id="certificates" name="Certificates" size="5" style="overflow: hidden;display: -webkit-box;" multiple>
+              <option value="MSDS">MSDS</option>
+              <option value="CE">CE</option>
+              <option value="TuV">TuV</option>
+              <option value="PSE">PSE</option>
+              <option value="ISO9001">ISO9001</option>
+            </select> -->
+          </li>
+
+          <li class="form-line" data-type="control_button">
+            <div class="form-input-wide" data-layout="full">
+              <div data-align="center" class="form-buttons-wrapper form-buttons-center   jstest-button-wrapperField">
+                <form action="/">
+                <button type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="" style="border-style: hidden; color:white ; padding: 10px; font-size: 20px;background: red;">
+                  Back To Dashboard
+                </button>
+              </form>
+              </div>
+            </div>
+          </li>
+          
+          <!-- <li style="clear:both">
+          </li> -->
+          <!-- <li style="display:none">
+            Should be Empty:
+            <input type="text" name="website" value="">
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    
+</body>
+
+
+<style>
+  html{
+    background-color:white;
+  }
+  ul.page-section {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0 38px;
+      list-style: none;
+  }
+  form-all {
+      display: -ms-flexbox;
+      display: block;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 72px auto;
+      width: 100%;
+      border: 0!important;
+  }
+  body {
+      font-family: Inter,sans-serif;
+      font-size: 16px;
+      background-color: #ecedf3;
+      color: #2c3345;
+  }
+  ul{
+    display: contents;
+  }
+  li{   
+    margin:2px;
+    font-size: 17px;
+    padding: 3px;
+  }
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 0px;
+  }
+</style>
+
+</html>

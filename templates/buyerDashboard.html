@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="form-header-group  header-large">
+        <div class="header-text httal htvam">
+          <h1  class="form-header" data-component="header">
+            Buyer's Dashboard
+          </h1>
+        </div>
+      </div>
+      
+      <h2>My RFQs</h2>
+      <div>
+        <a href="/RFQ/post">Create RFQ</a> <br>
+       <label for="rfqs">My RFQs</label>
+      <ol> 
+        <li style="display:flex;justify-content: space-around;padding: 10px;text-transform: uppercase;text-decoration: underline;">
+          <div>product</div>
+          <div>quantity</div>
+          <div>usage</div>
+          <div>product_type</div>
+          <div>voltage</div>
+          <div>capacity</div>
+        </li> 
+        {%for i in range(0, rfqLenght)%} 
+          <li style="display:flex;justify-content: space-around;padding: 10px; ">
+            <div>{{rfqs[i]['product']}} </div>
+            <div>{{rfqs[i]['quantity']}} </div>
+            <div>{{rfqs[i]['usage']}} </div>
+            <div>{{rfqs[i]['product_type']}} </div>
+            <div>{{rfqs[i]['voltage']}} </div>
+            <div>{{rfqs[i]['capacity']}} </div>
+          </li> 
+        {%endfor%} 
+      </ol>
+      </div>
+
+      <div>
+        <label for="quotations">Recieved Quotations</label>
+       <ol> 
+        <li style="text-decoration: underline;">
+          <div>Quote's Seller</div>
+          <div>Quote's Product</div>
+          <div>Details</div>
+        </li> 
+         {%for i in range(0, quotsLenght)%} 
+           <li>
+             <div>{{quotations[i][1]}}</div>
+             <div>{{quotations[i][3]}}</div>
+             <div> <a href="/{{quotations[i][2]}}/quote">show...</a></div>
+           </li> 
+         {%endfor%} 
+       </ol>
+       </div>
+
+       <style>
+        li{
+          display: flex;
+        justify-content: space-evenly;
+        }
+    </style>
+
+{% endblock %}
+

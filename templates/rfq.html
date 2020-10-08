@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form style="background-color: white;" class="center" action="/RFQ/post" method="POST">
+    <div role="main" class="form-all" style="margin:0 auto;">
+        <ul class="form-section page-section" style="display: block;" >
+          <li id="cid_27" class="form-input-wide" data-type="control_head">
+            <div class="form-header-group  header-large">
+              <div class="header-text httal htvam">
+                <h2 id="header_27" class="form-header" data-component="header">
+                  Request for Quote
+                </h2>
+                <div id="subHeader_27" class="form-subHeader">
+                  Simply Enter Component Info
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          
+          <li class="form-line jf-required" data-type="control_email" id="id_6">
+            <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6">
+              Product Name
+            </label>
+            <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" id="productName" name="productName" class="form-textbox" style="width:610px; height:1rem" size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div>
+          </li>
+          <li class="form-line form-line-column form-col-1 jf-required" data-type="control_dropdown" id="id_17">
+            <label class="form-label form-label-top" id="label_17" for="input_17">
+              Usage
+            </label>
+            <div id="cid_17" class="form-input-wide jf-required" data-layout="half">
+              <select class="form-dropdown validate[required]" id="usage" name="usage" style="width:310px ; font-size:16px" data-component="dropdown" required="" aria-labelledby="label_17">
+                <option selected="" value="ebike" > Ebike </option>
+                <option value="escooter" > Escooter </option>
+              </select>
+            </div>
+          </li>
+    
+          <li class="form-line jf-required" data-type="control_email" id="id_6">
+            <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6">
+              Type
+            </label>
+            <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" id="productType" name="productType" class="form-textbox" style="width:310px; height:1rem" size="310" value="" placeholder="Lithium battery" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div>
+          </li>
+    
+          <li class="form-line jf-required" data-type="control_radio" id="id_12">
+            <label class="form-label form-label-top form-label-auto" id="label_12" for="input_12">
+              Voltage
+            </label>
+            <div id="cid_12" class="form-input-wide jf-required" data-layout="full">
+              <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_12" data-component="radio">
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" id="voltage" name="voltage" value="24" required="">
+                  <label id="label_input_12_0" for="input_12_0"> 24V </label>
+                </span>
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" id="voltage" name="voltage" value="36" required="">
+                  <label id="label_input_12_1" for="input_12_1"> 36V </label>
+                </span>
+                <span class="form-radio-item">
+                  <span class="dragger-item">
+                  </span>
+                  <input type="radio" class="form-radio validate[required]" id="voltage" name="voltage" value="48" required="">
+                  <label id="label_input_12_2" for="input_12_2"> 48V </label>
+                </span>
+              </div>
+            </div>
+          </li>
+    
+          <li class="form-line jf-required" data-type="control_email" id="id_6">
+            <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6">
+              Capacity
+              
+            </label>
+            <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="text" id="capacity" name="capacity" class="form-textbox" style="width:310px; height:1rem" size="310" value="" placeholder="e.g 12Ah" aria-labelledby="label_6 sublabel_input_6" required="">
+              </span>
+            </div>
+          </li>
+          <li class="form-line jf-required" data-type="control_email" id="id_6">
+            <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6">
+              Quantity
+             
+            </label>
+            <div id="cid_6" class="form-input-wide jf-required" data-layout="half">
+              <span class="form-sub-label-container " style="vertical-align:top">
+                <input type="number" id="input_6" name="quantity" class="form-textbox" style="width:310px; height:1rem " size="310" value="" aria-labelledby="label_6 sublabel_input_6" required="">
+                pieces
+              </span>
+            </div>
+          </li>
+          <li class="form-line" data-type="control_button" id="id_2">
+            <div id="cid_2" class="form-input-wide" data-layout="full">
+              <div data-align="center" class="form-buttons-wrapper form-buttons-center   jstest-button-wrapperField">
+                <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="" style="border-style: hidden; color:white ; padding: 10px; font-size: 20px;background: red;">
+                  Submit RFQ
+                </button>
+              </div>
+            </div>
+          </li>
+          
+          <li style="clear:both">
+          </li>
+          <!-- <li style="display:none">
+            Should be Empty:
+            <input type="text" name="website" value="">
+          </li> -->
+        </ul>
+      </div>
+    </form>
+    
+</body>
+
+
+<style>
+  html{
+    background-color:white;
+  }
+  form-all {
+      border-radius: 3px;
+      box-shadow: 0 4px 4px rgba(87,100,126,.21);
+      background-color: rgb(255, 255, 255);
+      max-width: 752px;
+  }
+  ul.page-section {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0 38px;
+      list-style: none;
+  }
+  form-all {
+      display: -ms-flexbox;
+      display: block;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 72px auto;
+      width: 100%;
+      border: 0!important;
+  }
+  body {
+      font-family: Inter,sans-serif;
+      font-size: 16px;
+      background-color: #ecedf3;
+      color: #2c3345;
+  }
+  ul{
+    display: contents;
+  }
+  li{
+    margin:10px;
+    font-size: 17px;
+    padding: 10px;
+  }
+  input{
+    border-color: grey;
+    font-size: 20px;
+    height: 1.5rem;
+
+  }
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 0px;
+  }
+</style>
+
+</html>

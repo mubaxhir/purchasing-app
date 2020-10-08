@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% if context['product'] %}
+    <h3>Product Name: {{context['product']['product_name']}}</h3>
+    <h4>Product Description:</h4>
+    <p>{{context['product']['product_details']}}</p>
+    {% else %}
+    <h2>Not created yet</h2>
+        <h1>Create Product</h1>
+        <form action="/product/create" id="productForm" method="POST">
+            <div>
+                <label>Product name</label>
+                <input name='product_name' type="text">
+            </div>
+            <div>
+                <label>Description</label>
+                <textarea name="description" id="description" cols="60" rows="10" form="productForm"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary " >create</button>            
+        </form>
+    {% endif %}
+{% endblock %}

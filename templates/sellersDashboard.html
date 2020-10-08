@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="form-header-group  header-large">
+        <div class="header-text httal htvam">
+          <h1  class="form-header" data-component="header">
+            Seller's Dashboard
+          </h1>
+        </div>
+      </div>
+      
+      <h2>RFQs</h2>
+      <div>
+        <ol>
+            <li style="justify-content: space-around;display: flex; text-decoration:underline; ">
+              <h4>Product</h4>
+              <h4>buyer</h4>
+              <!-- <th>Unread</th> -->
+              <h4>Quote?</h4>
+            </li>
+            {%for i in range(0, rfqLenght)%} 
+              <li style="justify-content: space-around;display: flex;">
+                <div>{{rfqs[i]['product']}}</div>
+                <div>{{rfqs[i]['buyer'][1:]}}</div>
+                <!-- <td>{{rfqs[i]['read']}}</td> -->
+                <div><a href="/quote/post/{{rfqs[i]['buyer']}}">Quote</a></div>
+              </li>
+            {%endfor%} 
+            </ol>
+      </div>
+      <div><a href="/product/create">My Product</a></div>
+
+{% endblock %}
+
