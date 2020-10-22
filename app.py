@@ -1,26 +1,19 @@
 """Flask Login Example and instagram fallowing find"""
 
-from flask import Flask, url_for, render_template, flash, request, redirect, session, logging, request,jsonify
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, url_for, render_template, flash, request, redirect, session, logging, request,jsonify,current_app
 
 import os
-# import json,bson
-# import datetime
-# import os
-# from dotenv import load_dotenv
 
-# basedir = os.path.dirname(os.path.abspath(__file__))
-# load_dotenv(os.path.join(basedir, '.env'))
+from flask import Flask
+from sqlalchemy import create_engine,MetaData
+from flask_sqlalchemy import SQLAlchemy
 
-
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app = Flask(__name__, instance_relative_config=False)
+app.config.from_object('config.Config')
 db = SQLAlchemy(app)
+# engine = create_engine('mssql+pymssql://sa:Maqsood_9211@hostname:1433/TestDB')
 
-# session['username'] = 'admin'
-
-
+# m = MetaData()
 
 class Buyer(db.Model):
     # table
@@ -265,6 +258,8 @@ class Quotation(db.Model):
             'customized_logo' 	: self.customized_logo,
             'certificates' 		: self.certificates
         }
+
+# m.create_all(engine)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -564,9 +559,7 @@ def logout():
     session['user_id'] = None
     return redirect(url_for('home'))
 
-
-if __name__ == '__main__':
-    app.debug = True
-    db.create_all()
-    app.secret_key = "123"
-    app.run(port=8080, debug=True)
+if __name__ == "__main__":
+    db.init_app(app)
+    db.create_all()   
+    app.run(port=8080,debug=True)
