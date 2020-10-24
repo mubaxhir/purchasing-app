@@ -157,8 +157,7 @@ class Quotation(db.Model):
         "buyer.user_id"), nullable=False)
     seller = db.Column('seller_id', db.Integer, db.ForeignKey(
         "seller.user_id"), nullable=False)
-    product = db.Column('product_id', db.ForeignKey(
-        "product.productId"), nullable=False)
+    product = db.Column('product_name', db.String(45) , nullable=False)
     quantity = db.Column('quantity', db.Integer, nullable=False)
     capacity = db.Column('capacity', db.Integer, nullable=False)
     usage = db.Column('usage', db.String(45), nullable=False)
@@ -290,13 +289,15 @@ def home():
                 print(e)
                 rfqs = []
 
-            try:
-                # print([x.to_json() for x in Quotation.query.filter_by( buyer=user[0] )])
-                quotations = [(x.to_json()['seller'],x.to_json()['quotation_id'],x.to_json()['product']) for x in Quotation.query.filter_by( buyer=user[0] )]
-                quotations = [(int(x[0][0]),x[0][1:],x[1],x[2]) for x in quotations]
-            except Exception as e:
-                print(e)
-                quotations = []
+            # try:
+            # print([x.to_json() for x in Quotation.query.filter_by( buyer=user[0] )])
+            quotations = [(x.to_json()['seller'],x.to_json()['quotation_id'],x.to_json()['product']) for x in Quotation.query.filter_by( buyer=user[0] )]
+            quotations = [( Seller.query.filter_by(user_id=int(x[0])).first().to_json()['username'],x[0],x[1],x[2]) for x in quotations]
+            # except Exception as e:
+            #     print(e)
+            #     quotations = []
+
+            print(quotations)
             
             return render_template('buyerDashboard.html', rfqLenght=len(rfqs), rfqs=rfqs, quotations=quotations, quotsLenght=len(quotations))
 
@@ -424,10 +425,10 @@ def post_quotation(buyer):
     else:
         user = str(session.get('user_id'))
         all_sellers = [str(x.to_json()['user_id'])+str(x.to_json()['username']) for x in  Seller.query.all()]
-
+        print(user,all_sellers)
         if user in all_sellers:
             buyer = buyer[0]
-            seller = session['user_id']
+            seller = user[0]
             product = request.form['productName']
             price = request.form['price']
             quantity = request.form['quantity']
@@ -455,7 +456,7 @@ def post_quotation(buyer):
 
             quotation = Quotation(
                 buyer=buyer,
-                seller=seller,
+                seller=seller[0],
                 product=product,
                 capacity=capacity,
                 quantity=quantity,
